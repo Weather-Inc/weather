@@ -7,7 +7,7 @@ RUN yarn global add pm2
 WORKDIR /app
 
 # Copy packaged sources from build/ directory
-COPY . .
+COPY build/ .
 
 # Expose app API port
 EXPOSE 3100
