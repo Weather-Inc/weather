@@ -1,0 +1,47 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "arrow-return-shorthand": true,
+    "comment-format": [
+      true,
+      "check-space",
+      "check-uppercase",
+      "allow-trailing-lowercase"
+    ],
+    "curly": [true, "ignore-same-line"],
+    "import-spacing": true,
+    "interface-over-type-literal": true,
+    "newline-before-return": true,
+    "no-async-without-await": true,
+    "no-consecutive-blank-lines": true,
+    "no-console": {
+      "severity": "warning",
+      "options": ["log", "error", "debug", "info", "time", "timeEnd", "trace"]
+    },
+    "no-default-export": false,
+    "no-duplicate-imports": [
+      true,
+      {
+        "allow-namespace-imports": true
+      }
+    ],
+    "no-empty-interface": true,
+    "no-irregular-whitespace": true,
+    "no-require-imports": true,
+    "no-trailing-whitespace": true,
+    "only-arrow-functions": [
+      true,
+      "allow-declarations",
+      "allow-named-functions"
+    ],
+    "prefer-const": true,
+    "prefer-method-signature": true,
+    "promise-function-async": true,
+    "quotemark": [true, "single"],
+    "semicolon": false,
+    "space-before-function-paren": true
+  },
+  "rulesDirectory": []
+}
