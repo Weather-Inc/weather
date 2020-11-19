@@ -13,7 +13,7 @@ const config = {
   },
 
   prod: {
-    awhere_basic_token: process.env.AWHERE_BASIC_TOKEN,   
+    awhere_basic_token: process.env.AWHERE_BASIC_TOKEN,
     awhere_url: AWHERE_URL,
     mongodb_uri: ''
   }

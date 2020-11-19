@@ -50,7 +50,7 @@ export const getDefaultWeatherData = async (req: Request, res: Response) => {
     const { latitude, longitude, offset, limit, bearer_token } = req.body
     let url = `${aWhereUrl}/v2/weather/locations/${latitude},${longitude}/forecasts`
 
-    if (offset !== null && offset !== "" && limit !== null && limit !== "") {
+    if (offset !== null && offset !== '' && limit !== null && limit !== '') {
       url += `?offset=${offset}&limit=${limit}`
     }
 
@@ -95,7 +95,7 @@ export const getWeatherDataForDate = async (req: Request, res: Response) => {
     const { latitude, longitude, date, offset, limit, bearer_token } = req.body
     let url = `${aWhereUrl}/v2/weather/locations/${latitude},${longitude}/forecasts/${date}`
 
-    if (offset !== null && offset !== "" && limit !== null && limit !== "") {
+    if (offset !== null && offset !== '' && limit !== null && limit !== '') {
       url += `?offset=${offset}&limit=${limit}`
     }
 
@@ -140,7 +140,7 @@ export const getWeatherDataForRange = async (req: Request, res: Response) => {
     const { latitude, longitude, start_date, end_date, offset, limit, bearer_token } = req.body
     let url = `${aWhereUrl}/v2/weather/locations/${latitude},${longitude}/forecasts/${start_date},${end_date}`
 
-    if (offset !== null && offset !== "" && limit !== null && limit !== "") {
+    if (offset !== null && offset !== '' && limit !== null && limit !== '') {
       url += `?offset=${offset}&limit=${limit}`
     }
 
