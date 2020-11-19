@@ -9,6 +9,9 @@ RUN yarn global add pm2
 # Copy packaged sources from build/ directory
 COPY build/ .
 
+# Copy node_modules directory
+COPY node_modules/ .
+
 # Expose app API port
 EXPOSE 3100
 
