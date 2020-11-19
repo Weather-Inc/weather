@@ -6,11 +6,14 @@ WORKDIR /app
 # Install pm2 as process manager
 RUN yarn global add pm2
 
+# Copy package.json to app directory
+COPY package.json .
+
+# Install app dependencies
+RUN yarn install
+
 # Copy packaged sources from build/ directory
 COPY build/ .
-
-# Copy node_modules directory
-COPY node_modules/ .
 
 # Expose app API port
 EXPOSE 3100
