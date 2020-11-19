@@ -3,6 +3,8 @@ FROM node:12.16.3-alpine
 # Install pm2 as process manager
 RUN yarn global add pm2
 
+RUN mkdir -p ~/.pm2/node_modules
+
 # Create app directory
 WORKDIR /app
 
