@@ -48,13 +48,6 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Install packages
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn install
-      
-      - name: Build package
-        run: yarn build
-
       # Runs a set of commands using the runners shell
       - name: Deploy Docker Image to Heroku App
         id: Heroku
