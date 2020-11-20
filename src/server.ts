@@ -14,7 +14,7 @@ import { get404 } from './v0/routes/error.router'
 // Private variables
 const app = express()
 const port = process.env.PORT || 3200
-const c = process.env.production ? config.prod : config.dev
+const c = process.env.NODE_ENV === 'production' ? config.prod : config.dev
 dotenv.config()
 
 // Parse bodies of requests with bodies
@@ -40,7 +40,7 @@ app.use('/api/v0/', V0IndexRouter)
 app.use(get404)
 
 app.listen(port, () => {
-  console.log('ENVIRONMENT', process.env.production)
+  console.log('ENVIRONMENT', process.env.NODE_ENV)
   console.log(`Server running at http://localhost:${port}`)
   console.log(`Press CTRL+C to stop server`)
 })
