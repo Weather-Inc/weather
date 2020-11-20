@@ -39,15 +39,21 @@ app.use('/api/v0/', V0IndexRouter)
 // Resource not found
 app.use(get404)
 
+app.listen(port, () => {
+  console.log('ENVIRONMENT', process.env.production)
+  console.log(`Server running at http://localhost:${port}`)
+  console.log(`Press CTRL+C to stop server`)
+})
+
 // Mongoose connection
-mongoose.connect(c.mongodb_uri, {
-  useCreateIndex: true,
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  // Start server
-  app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`)
-    console.log(`Press CTRL+C to stop server`)
-  })
-}).catch(error => console.log(error))
+// mongoose.connect(c.mongodb_uri, {
+//   useCreateIndex: true,
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// }).then(() => {
+//   // Start server
+//   app.listen(port, () => {
+//     console.log(`Server running at http://localhost:${port}`)
+//     console.log(`Press CTRL+C to stop server`)
+//   })
+// }).catch(error => console.log(error))
