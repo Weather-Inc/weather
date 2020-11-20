@@ -48,9 +48,6 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.3.0
-
       - name: Install packages
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
@@ -65,5 +62,5 @@ jobs:
         with:
           email: ${{ secrets.HEROKU_EMAIL }}
           api_key: ${{ secrets.HEROKU_API_KEY }}
-          docker_compose_file: '**/docker-compose.yaml'
-          heroku_apps: '[{"imagename": ${{ secrets.WEATHER_IMG_TAG }}, "appname": ${{ secrets.HEROKU_APP_NAME }}, "apptype": "web"}]'
+          docker_compose_file: './docker-compose.yaml'
+          heroku_apps: '[{"imagename":"sn_weather_weather","appname": "sn-weather-weather","apptype": "web"},{"imagename":"sn_weather_mongo","appname": "sn-weather-weather", "apptype": "mongo"}]'

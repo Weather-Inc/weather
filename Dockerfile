@@ -19,7 +19,7 @@ RUN yarn install
 COPY build/ .
 
 # Expose app API port
-EXPOSE 3100
+EXPOSE 3200
 
 # Build the app for production
 CMD ["pm2-runtime", "server.js"]
