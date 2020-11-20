@@ -14,7 +14,9 @@ import { get404 } from './v0/routes/error.router'
 // Private variables
 const app = express()
 const port = process.env.PORT || 3200
-const c = process.env.NODE_ENV === 'production' ? config.prod : config.dev
+const mongodbUri = process.env.NODE_ENV === 'production'
+  ? config.prod.mongodb_uri
+  : config.dev.mongodb_uri
 dotenv.config()
 
 // Parse bodies of requests with bodies
@@ -40,7 +42,7 @@ app.use('/api/v0/', V0IndexRouter)
 app.use(get404)
 
 // Mongoose connection
-mongoose.connect(c.mongodb_uri, {
+mongoose.connect(mongodbUri, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,

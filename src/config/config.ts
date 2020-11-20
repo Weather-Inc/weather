@@ -15,7 +15,7 @@ const config = {
   prod: {
     awhere_basic_token: process.env.AWHERE_BASIC_TOKEN,
     awhere_url: AWHERE_URL,
-    mongodb_uri: MONGODB_URI
+    mongodb_uri: process.env.MONGODB_URI || MONGODB_URI
   }
 }
 
